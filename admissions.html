@@ -1,0 +1,196 @@
+<!-- admissions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions - GIBS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #FFD700;
+      --gold-hover: #e6c200; /* Slightly darker shade for hover effects */
+      --dark: #333;
+      --light: #fff;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+    .navbar {
+      background-color: #333; /* Dark gray background for the navbar */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1rem 1.5rem;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 80px; /* Adjust logo size */
+      margin-right: 15px;
+    }
+    .navbar-brand div {
+      text-align: left;
+    }
+    .navbar-brand strong {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+    .navbar-brand small {
+      color: #FFD700;
+      font-size: 1rem;
+    }
+    .nav-link, .navbar-brand {
+      color: #fff !important; /* White text for contrast */
+      font-weight: bold;
+    }
+    .nav-link.active {
+      color: var(--gold) !important; /* Highlight active link with gold */
+    }
+    .nav-link:hover {
+      color: var(--gold-hover) !important; /* Slightly darker gold on hover */
+    }
+    .section {
+      padding: 60px 0;
+    }
+    .section-title {
+      color: var(--gold);
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .step {
+      margin-bottom: 2rem;
+      padding: 20px;
+      border: 1px solid var(--gold);
+      border-radius: 8px;
+      background-color: var(--light);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .step h5 {
+      color: var(--gold);
+      font-weight: bold;
+    }
+    .step p, .step ul, .step address {
+      margin: 0.5rem 0;
+    }
+    .footer {
+      background-color: var(--gold);
+      color: var(--dark);
+      padding: 1rem;
+      text-align: center;
+    }
+    a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--gold-hover);
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="GIBS Logo">
+        <div>
+          <strong style="font-size: 1.8rem;">GIBS</strong><br>
+          <small style="font-size: 1rem;">Ghana International Business School</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="consultants.html">Consultants</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> <!-- New Gallery Menu -->
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Admissions Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Admissions</h2>
+      <p class="text-center">Follow these steps to apply for any of our diploma, short course, or professional programmes.</p>
+
+      <!-- Download Application Form -->
+      <div class="text-center mb-4">
+        <a href="files/application_form.pdf" class="btn btn-lg btn-outline-dark" download>
+          <i class="bi bi-file-earmark-pdf"></i> Download Application Form
+        </a>
+      </div>
+
+      <!-- Steps -->
+      <div class="step" data-aos="fade-up">
+        <h5>1. Review Entry Requirements</h5>
+        <p>Each programme has specific prerequisites. Generally, applicants need a secondary school certificate or its equivalent. For executive-level courses, relevant work experience is required.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="100">
+        <h5>2. Choose Your Programme</h5>
+        <p>Browse our <a href="programs.html">Programmes page</a> and select the course that matches your career goals.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="200">
+        <h5>3. Complete Application Form</h5>
+        <p>Download and fill out the application form, then attach:</p>
+        <ul>
+          <li>Certified copies of academic certificates</li>
+          <li>Curriculum Vitae (CV)</li>
+          <li>Proof of payment of application fee</li>
+        </ul>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="300">
+        <h5>4. Submit Documents</h5>
+        <p>Send your application package to our Admissions Office by email or in person at:</p>
+        <address>
+          Ghana International Business School (GIBS)<br />
+          No. 304/14 Odotei Tsui Close, Dzorwulu–Accra, Ghana<br />
+          Email: <a href="mailto:gibsaccra@gmail.com">gibsaccra@gmail.com</a><br />
+          Phone: +233 243 588 422
+        </address>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="400">
+        <h5>5. Application Review & Offer</h5>
+        <p>Our admissions team will review your documents and notify you of our decision within 7–10 business days.</p>
+      </div>
+      <div class="step" data-aos="fade-up" data-aos-delay="500">
+        <h5>6. Registration & Payment</h5>
+        <p>Upon acceptance, complete registration and pay tuition fees to secure your place. Detailed payment instructions will be provided in your offer letter.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light py-4">
+    <div class="container text-center">
+      <p>&copy; 2025 Ghana International Business School (GIBS). All Rights Reserved.</p>
+      <p>
+        <a href="contact.html" class="text-decoration-none text-light">Contact Us</a> |
+        <a href="privacy.html" class="text-decoration-none text-light">Privacy Policy</a> |
+        <a href="terms.html" class="text-decoration-none text-light">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GIBS – Programmes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #FFD700;
+      --gold-hover: #e6c200;
+      --dark: #333;
+      --light: #fff;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+    .navbar {
+      background-color: #333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1rem 1.5rem;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 80px;
+      margin-right: 15px;
+    }
+    .navbar-brand strong {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+    .navbar-brand small {
+      color: #FFD700;
+      font-size: 1rem;
+    }
+    .nav-link, .navbar-brand {
+      color: #fff !important;
+      font-weight: bold;
+    }
+    .nav-link.active {
+      color: var(--gold) !important;
+    }
+    .nav-link:hover {
+      color: var(--gold-hover) !important;
+    }
+    .section-title {
+      color: var(--gold);
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .list-group-item {
+      background-color: var(--light);
+      border: none;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .list-group-item:hover {
+      background-color: var(--gold-hover);
+      color: var(--light);
+      transform: translateY(-5px);
+    }
+    .list-group-item .hover-details {
+      display: none;
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: var(--dark);
+    }
+    .list-group-item:hover .hover-details {
+      display: block;
+    }
+    .about-text {
+      font-size: 1.2rem; /* Adjust font size */
+      font-weight: bold; /* Make the text bold */
+      text-align: center; /* Center-align the text */
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for elevation */
+      line-height: 1.8; /* Improve readability with line spacing */
+      color: yellow; /* Yellow text color */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="GIBS Logo">
+        <div>
+          <strong style="font-size: 1.8rem;">GIBS</strong><br>
+          <small style="font-size: 1rem;">Ghana International Business School</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="consultants.html">Consultants</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> <!-- New Gallery Menu -->
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About the Website Section -->
+  <section id="about-gibs" class="py-5" style="background: url('images/welcome-bg.jpg') no-repeat center center; background-size: cover; color: #fff;">
+    <div class="container text-center">
+      <h2 class="section-title" data-aos="fade-up">About GIBS</h2>
+      <p class="about-text" data-aos="fade-up" data-aos-delay="100">
+        At Ghana International Business School (GIBS), we are committed to providing world-class education and training programs tailored to meet the needs of professionals, entrepreneurs, and organizations. Explore our diverse range of programs designed to empower you with the skills and knowledge needed to excel in today's competitive business environment.
+      </p>
+    </div>
+  </section>
+
+  <!-- Programs Section -->
+  <section id="programs" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up">Our Programmes</h2>
+
+      <!-- Regular Programs -->
+      <div class="mb-5">
+        <h3 class="text-center mb-4">Regular Programmes</h3>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          <!-- LCGP -->
+          <div class="col">
+            <div class="card h-100" data-aos="fade-up">
+              <img src="images/boardroom-1024x432.jpg" class="card-img-top" alt="Leadership & Corporate Governance Programme">
+              <div class="card-body">
+                <h5 class="card-title">Leadership & Corporate Governance Programme (LCGP)</h5>
+                <p><strong>Dates:</strong> June 25–27, 2025 &nbsp;|&nbsp; <strong>Fee:</strong> GHC 2,900</p>
+                <p>Explore corporate governance fundamentals, board roles, and leadership strategies.</p>
+                <a href="lcgp.html" class="btn btn-outline-dark">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <!-- SMP -->
+          <div class="col">
+            <div class="card h-100" data-aos="fade-up" data-aos-delay="100">
+              <img src="images/smp.jpg" class="card-img-top" alt="Strategic Management Programme">
+              <div class="card-body">
+                <h5 class="card-title">Strategic Management Programme (SMP)</h5>
+                <p><strong>Dates:</strong> Sept 24–26, 2025 &nbsp;|&nbsp; <strong>Fee:</strong> GHC 2,900</p>
+                <p>Learn strategic planning, stakeholder engagement, and crisis management.</p>
+                <a href="smp.html" class="btn btn-outline-dark">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <!-- MPMP -->
+          <div class="col">
+            <div class="card h-100" data-aos="fade-up" data-aos-delay="200">
+              <img src="images/mpmp.jpg" class="card-img-top" alt="Marketing & Public Relations Management Programme">
+              <div class="card-body">
+                <h5 class="card-title">Marketing & Public Relations Management Programme (MPMP)</h5>
+                <p><strong>Dates:</strong> Oct 15–17, 2025 &nbsp;|&nbsp; <strong>Fee:</strong> GHC 2,900</p>
+                <p>Master marketing strategies, branding, and campaign ROI techniques.</p>
+                <a href="mpmp.html" class="btn btn-outline-dark">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <!-- SPAP -->
+          <div class="col">
+            <div class="card h-100" data-aos="fade-up" data-aos-delay="300">
+              <img src="images/spap.jpg" class="card-img-top" alt="Secretaries & Personal Assistants Programme">
+              <div class="card-body">
+                <h5 class="card-title">Secretaries & Personal Assistants Programme (SPAP)</h5>
+                <p><strong>Dates:</strong> Oct 22–24, 2025 &nbsp;|&nbsp; <strong>Fee:</strong> GHC 2,900</p>
+                <p>Enhance time management, event planning, and communication skills.</p>
+                <a href="spap.html" class="btn btn-outline-dark">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Special Programs -->
+      <div class="mb-5">
+        <h3 class="text-center mb-4">Special Programmes</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <!-- The Art and Science of Entrepreneurship -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
+              <div class="card-body">
+                <h5 class="card-title text-center">The Art and Science of Entrepreneurship</h5>
+                <p class="card-text">
+                  Learn the entrepreneurial mindset, risks, and rewards of starting a business, and how to create a business model canvas.
+                </p>
+                <div class="text-center">
+                  <a href="entrepreneurship.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Strategic Business Planning and Management -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5 class="card-title text-center">Strategic Business Planning and Management</h5>
+                <p class="card-text">
+                  Understand the importance of business plans, strategy frameworks, and how to present a professional business plan.
+                </p>
+                <div class="text-center">
+                  <a href="business-planning.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fund Raising and Financial Management for Business -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h5 class="card-title text-center">Fund Raising and Financial Management for Business</h5>
+                <p class="card-text">
+                  Explore techniques for raising funds, choosing capital providers, and managing post-funding relationships.
+                </p>
+                <div class="text-center">
+                  <a href="fund-raising.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Introduction to International Transport and Logistics -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body">
+                <h5 class="card-title text-center">Introduction to International Transport and Logistics</h5>
+                <p class="card-text">
+                  Learn the basics of sea and air freight logistics, packaging procedures, and cross-border trade operations.
+                </p>
+                <div class="text-center">
+                  <a href="transport-logistics.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Meeting Standards in the Agri-Food Sector -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="400">
+              <div class="card-body">
+                <h5 class="card-title text-center">Meeting Standards in the Agri-Food Sector</h5>
+                <p class="card-text">
+                  Understand food safety standards, HACCP certification, and compliance for agri-food production.
+                </p>
+                <div class="text-center">
+                  <a href="agri-food-standards.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Building Competitiveness in Trade Services -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="500">
+              <div class="card-body">
+                <h5 class="card-title text-center">Building Competitiveness in Trade Services</h5>
+                <p class="card-text">
+                  Discover strategies to enhance trade services competitiveness and the role of digital technology in trade.
+                </p>
+                <div class="text-center">
+                  <a href="trade-services.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Module 7: Introduction to Supply Chain Management -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
+              <div class="card-body">
+                <h5 class="card-title text-center">Introduction to Supply Chain Management</h5>
+                <p class="card-text">
+                  Learn about supply chain management, key competencies, trade-offs, and strategies to improve operational effectiveness.
+                </p>
+                <div class="text-center">
+                  <a href="supply-chain-management.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Module 8: Export Marketing Strategy within the AfCFTA Framework -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-body">
+                <h5 class="card-title text-center">Export Marketing Strategy within the AfCFTA Framework</h5>
+                <p class="card-text">
+                  Understand export marketing strategies, decision-making processes, and how to craft effective messages for customers.
+                </p>
+                <div class="text-center">
+                  <a href="export-marketing.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Module 9: Introduction to E-Commerce & Digital Marketing -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="200">
+              <div class="card-body">
+                <h5 class="card-title text-center">Introduction to E-Commerce & Digital Marketing</h5>
+                <p class="card-text">
+                  Explore e-commerce opportunities, prepare your business for online sales, and learn digital marketing strategies.
+                </p>
+                <div class="text-center">
+                  <a href="e-commerce-digital-marketing.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Module 10: Export Business Generation and Sales -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="300">
+              <div class="card-body">
+                <h5 class="card-title text-center">Export Business Generation and Sales</h5>
+                <p class="card-text">
+                  Learn sales and negotiation tactics, prepare for international sales meetings, and develop effective sales strategies.
+                </p>
+                <div class="text-center">
+                  <a href="export-business-generation.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Module 11: Introduction to Cross-Border Contracts -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="400">
+              <div class="card-body">
+                <h5 class="card-title text-center">Introduction to Cross-Border Contracts</h5>
+                <p class="card-text">
+                  Understand cross-border contracts, legal concepts, and how to ensure fairness and compliance in international trade.
+                </p>
+                <div class="text-center">
+                  <a href="cross-border-contracts.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Module 12: Monitoring and Evaluation Programme -->
+          <div class="col">
+            <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="500">
+              <div class="card-body">
+                <h5 class="card-title text-center">Monitoring and Evaluation Programme</h5>
+                <p class="card-text">
+                  Develop M&E skills, design logical frameworks, track performance indicators, and implement comprehensive M&E plans.
+                </p>
+                <div class="text-center">
+                  <a href="monitoring-evaluation.html" class="btn btn-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bespoke Training -->
+      <div>
+        <h3 class="text-center mb-4">Bespoke Training</h3>
+        <p class="text-center">Custom-made programmes tailored to meet the unique needs of individuals and teams in private, public, and civil society sectors.</p>
+        <ul class="list-group">
+          <li class="list-group-item">The Peak Performance Programme (PPP)</li>
+          <li class="list-group-item">Executive Coaching</li>
+          <li class="list-group-item">Management Consulting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light py-4">
+    <div class="container text-center">
+      <p>&copy; 2025 Ghana International Business School (GIBS). All Rights Reserved.</p>
+      <p>
+        <a href="contact.html" class="text-decoration-none text-light">Contact Us</a> |
+        <a href="privacy.html" class="text-decoration-none text-light">Privacy Policy</a> |
+        <a href="terms.html" class="text-decoration-none text-light">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>

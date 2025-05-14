@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - GIBS</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #FFD700;
+      --gold-hover: #e6c200;
+      --dark: #333;
+      --light: #fff;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--light);
+      color: var(--dark);
+    }
+    .navbar {
+      background-color: #333;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1rem 1.5rem;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+    }
+    .navbar-brand img {
+      height: 80px;
+      margin-right: 15px;
+    }
+    .navbar-brand div {
+      text-align: left;
+    }
+    .navbar-brand strong {
+      color: #fff;
+      font-size: 1.8rem;
+    }
+    .navbar-brand small {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+    .nav-link, .navbar-brand {
+      color: #fff !important;
+      font-weight: bold;
+    }
+    .nav-link.active {
+      color: var(--gold) !important;
+    }
+    .nav-link:hover {
+      color: var(--gold-hover) !important;
+    }
+    .gallery-card {
+      position: relative;
+      overflow: hidden;
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .gallery-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .gallery-img {
+      border-radius: 8px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .gallery-card:hover .gallery-img {
+      transform: scale(1.1);
+    }
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 8px;
+    }
+    .gallery-card:hover .gallery-overlay {
+      opacity: 1;
+    }
+    .gallery-overlay p {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .section-title {
+      color: var(--gold);
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .filter-btn {
+      margin: 0 5px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .filter-btn.active {
+      background-color: var(--gold);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="GIBS Logo">
+        <div>
+          <strong>GIBS</strong><br>
+          <small>Ghana International Business School</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="consultants.html">Consultants</a></li>
+          <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title">Gallery</h2>
+      <p class="text-center">Explore moments from our programs, events, and campus life.</p>
+
+      <!-- Gallery Menu -->
+      <div class="text-center mb-4">
+        <button class="btn btn-outline-dark filter-btn active" data-filter="all">All</button>
+        <button class="btn btn-outline-dark filter-btn" data-filter="events">Events</button>
+        <button class="btn btn-outline-dark filter-btn" data-filter="campus-life">Campus Life</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="row g-4">
+        <!-- Image 1: Events -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item events">
+          <div class="card gallery-card">
+            <img src="images/gallery1.jpg" class="card-img-top gallery-img" alt="Event Highlights" data-bs-toggle="modal" data-bs-target="#galleryModal1">
+            <div class="gallery-overlay">
+              <p>Event Highlights</p>
+            </div>
+          </div>
+        </div>
+        <!-- Image 2: Events -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item events">
+          <div class="card gallery-card">
+            <img src="images/gallery2.jpg" class="card-img-top gallery-img" alt="Workshop" data-bs-toggle="modal" data-bs-target="#galleryModal2">
+            <div class="gallery-overlay">
+              <p>Workshop</p>
+            </div>
+          </div>
+        </div>
+        <!-- Image 3: Campus Life -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item campus-life">
+          <div class="card gallery-card">
+            <img src="images/gallery3.jpg" class="card-img-top gallery-img" alt="Campus Life" data-bs-toggle="modal" data-bs-target="#galleryModal3">
+            <div class="gallery-overlay">
+              <p>Campus Life</p>
+            </div>
+          </div>
+        </div>
+        <!-- Image 4: Campus Life -->
+        <div class="col-6 col-md-4 col-lg-3 gallery-item campus-life">
+          <div class="card gallery-card">
+            <img src="images/gallery4.jpg" class="card-img-top gallery-img" alt="Graduation Ceremony" data-bs-toggle="modal" data-bs-target="#galleryModal4">
+            <div class="gallery-overlay">
+              <p>Graduation Ceremony</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals for Lightbox -->
+  <!-- Modal 1 -->
+  <div class="modal fade" id="galleryModal1" tabindex="-1" aria-labelledby="galleryModal1Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <img src="images/gallery1.jpg" class="img-fluid" alt="Event Highlights">
+      </div>
+    </div>
+  </div>
+  <!-- Modal 2 -->
+  <div class="modal fade" id="galleryModal2" tabindex="-1" aria-labelledby="galleryModal2Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <img src="images/gallery2.jpg" class="img-fluid" alt="Workshop">
+      </div>
+    </div>
+  </div>
+  <!-- Modal 3 -->
+  <div class="modal fade" id="galleryModal3" tabindex="-1" aria-labelledby="galleryModal3Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <img src="images/gallery3.jpg" class="img-fluid" alt="Campus Life">
+      </div>
+    </div>
+  </div>
+  <!-- Modal 4 -->
+  <div class="modal fade" id="galleryModal4" tabindex="-1" aria-labelledby="galleryModal4Label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <img src="images/gallery4.jpg" class="img-fluid" alt="Graduation Ceremony">
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light py-4">
+    <div class="container text-center">
+      <p>&copy; 2025 Ghana International Business School (GIBS). All Rights Reserved.</p>
+      <p>
+        <a href="contact.html" class="text-decoration-none text-light">Contact Us</a> |
+        <a href="privacy.html" class="text-decoration-none text-light">Privacy Policy</a> |
+        <a href="terms.html" class="text-decoration-none text-light">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterButtons.forEach((btn) => btn.classList.remove('active'));
+        // Add active class to the clicked button
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+        galleryItems.forEach((item) => {
+          if (filter === 'all' || item.classList.contains(filter)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
