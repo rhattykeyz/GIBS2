@@ -1,5 +1,4 @@
-<!-- about.html -->
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -10,7 +9,7 @@
   <style>
     :root {
       --gold: #FFD700;
-      --gold-hover: #e6c200; /* Slightly darker shade for hover effects */
+      --gold-hover: #e6c200;
       --dark: #333;
       --light: #fff;
     }
@@ -20,7 +19,7 @@
       font-family: 'Segoe UI', sans-serif;
     }
     .navbar {
-      background-color: #333; /* Dark gray background for the navbar */
+      background-color: #333;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       padding: 1rem 1.5rem;
     }
@@ -29,8 +28,8 @@
       align-items: center;
     }
     .navbar-brand img {
-      height: 80px; /* Adjust logo size */
-      margin-right: 15px; /* Add spacing between the logo and text */
+      height: 80px;
+      margin-right: 15px;
     }
     .navbar-brand div {
       text-align: left;
@@ -44,20 +43,14 @@
       font-size: 1rem;
     }
     .nav-link, .navbar-brand {
-      color: #fff !important; /* White text for contrast */
+      color: #fff !important;
       font-weight: bold;
     }
     .nav-link.active {
-      color: var(--gold) !important; /* Highlight active link with gold */
+      color: var(--gold) !important;
     }
     .nav-link:hover {
-      color: var(--gold-hover) !important; /* Slightly darker gold on hover */
-    }
-    .navbar-toggler {
-      border-color: var(--gold-hover); /* Gold border for the toggler */
-    }
-    .navbar-toggler-icon {
-      background-color: #fff; /* White color for the toggler icon */
+      color: var(--gold-hover) !important;
     }
     .section {
       padding: 60px 0;
@@ -70,11 +63,7 @@
       text-align: center;
     }
     ul {
-      list-style-type: disc;
       margin-left: 20px;
-    }
-    ul li strong {
-      color: var(--gold);
     }
     .footer {
       background-color: var(--gold);
@@ -90,28 +79,18 @@
       color: var(--gold-hover);
       text-decoration: underline;
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeIn 1s ease-in-out forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="images/logo.png" alt="GIBS Logo">
         <div>
-          <strong style="font-size: 1.8rem;">GIBS</strong><br>
-          <small style="font-size: 1rem;">Ghana International Business School</small>
+          <strong>GIBS</strong><br>
+          <small>Ghana International Business School</small>
         </div>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -124,7 +103,7 @@
           <li class="nav-item"><a class="nav-link" href="programs.html">Programmes</a></li>
           <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
           <li class="nav-item"><a class="nav-link" href="consultants.html">Consultants</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> <!-- New Gallery Menu -->
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
@@ -132,47 +111,32 @@
   </nav>
 
   <!-- About Section -->
-  <section id="about" class="section" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">About GIBS</h2>
-      <p>
-        Ghana International Business School (GIBS) is a premier institution focused on developing professionals with strong business acumen, ethical grounding, and practical knowledge. We offer a variety of programs in business, finance, IT, and management.
-      </p>
-      <p>
-        Our programs are tailored to meet the current demands of the job market and are delivered by experienced lecturers and industry professionals.
-      </p>
-    </div>
-  </section>
+  <section class="section" data-aos="fade-up">
+    <div class="container text-start">
+      <h2 class="section-title">About Us</h2>
+      <p>Ghana International Business School (GIBS) is a registered knowledge broker; innovation, management training and consulting services provider for Private, Public and Civil Society Organisations (CSOs).</p>
+      <p>Established in the year 2006, GIBS has distinguished itself as provider of high impact strategic executive education programmes with deep African insights, curated to prepare participants and client organisations for global business success.</p>
+      <p>The advent of the African Continental Free Trade Area (AfCFTA), with many emerging economies and businesses in Africa, which requires deliberate efforts to develop the capacities of owner-managers and key executives of Micro, Small and Medium-sized Enterprises (MSMEs) in particular, to navigate the demands of the complex business environment and opportunities that beckons cannot be left to chance.</p>
+      <p>GIBS stands in the best place to meet this critical need. Following decades of experience working with African enterprises in leadership management and administration; we have developed the capacity to assess client needs and co-create the most innovative and rewarding solutions for client; and or client consultant co-execution.</p>
 
-  <!-- Mission & Vision -->
-  <section class="section bg-light" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">Mission & Vision</h2>
-      <p><strong>Mission:</strong> To provide industry-relevant education and training that empowers learners to make impactful contributions in business and society.</p>
-      <p><strong>Vision:</strong> To be the leading provider of practical and professional business education in Africa.</p>
-    </div>
-  </section>
+      <h2 class="section-title">Vision</h2>
+      <p>Become Africa’s leading Centre of Excellence in Leadership, Corporate Governance; Innovation, Information Technology, Management and Administration.</p>
 
-  <!-- Core Values -->
-  <section class="section" data-aos="fade-left">
-    <div class="container">
-      <h2 class="section-title">Our Core Values</h2>
+      <h2 class="section-title">Mission</h2>
+      <p>Continuously provide innovative practice based, world-class knowledge, skills and appropriate attitudes for leaders of Africa’s enterprises towards international business success.</p>
+
+      <h2 class="section-title">Goal and Objectives</h2>
+      <p>Our goal is to adequately equip owner/managers and executives of African enterprises to become highly competent in a wide range of global business subject areas and themes to enable them to, effectively and efficiently access intra-African trade opportunities dominant players as well as operate competitively in the international business arena.</p>
+
+      <p><strong>Objectives:</strong></p>
+      <p>Standing on our philosophy that good corporate governance, exemplified in leadership and innovation that permeates management and administrative practices are key success factors for contemporary international business, our objectives are:</p>
       <ul>
-        <li><strong>Integrity:</strong> We uphold ethical standards in all we do.</li>
-        <li><strong>Innovation:</strong> We promote creativity and problem-solving.</li>
-        <li><strong>Excellence:</strong> We strive for the highest standards in education.</li>
-        <li><strong>Leadership:</strong> We prepare students to lead with impact.</li>
+        <li>i. To equip leaders and managers of African enterprises with the relevant know-how to dominate intra-African trade and tap into its endless opportunities to become giants of enterprise.</li>
+        <li>ii. To provide the vehicle (Think Tank) for the intellectual calibration of strategic business subjects and themes that generate synergy to propel African enterprises to make global business impact.</li>
       </ul>
-    </div>
-  </section>
 
-  <!-- Affiliations -->
-  <section class="section bg-light" data-aos="zoom-in">
-    <div class="container">
-      <h2 class="section-title">Accreditation & Affiliations</h2>
-      <p>
-        GIBS is registered and accredited by the Ghana Education Service and affiliated with both local and international institutions, ensuring the global relevance and recognition of our certifications.
-      </p>
+      <h2 class="section-title">Program Partnership</h2>
+      <p>GIBS in partnership with the London Business Training & Consulting (LBTC), offers 15 regular programmes contemporaneously in the two great capital cities of London and Accra. The partnership dubbed “One Content Dual Locations” offers our participants the options to be trained in Accra or London. For 2025, participants are encouraged to apply early to:</p>
     </div>
   </section>
 
