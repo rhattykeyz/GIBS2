@@ -19,9 +19,17 @@
       color: var (--dark);
     }
     .navbar {
-      background-color: #333; /* Dark gray */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 1rem 1.5rem; /* Increase padding for better spacing */
+      background-color: #fff !important; /* white background */
+      color: #222 !important;            /* dark text */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: #222 !important;
+    }
+    .navbar .nav-link.active,
+    .navbar .nav-link:hover {
+      color: #bfa046 !important; /* gold or your highlight color */
     }
     .navbar-brand {
       display: flex;
@@ -131,7 +139,7 @@
 </head>
 <body>
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="index.html">
       <img src="images/logo.png" alt="GIBS Logo">
