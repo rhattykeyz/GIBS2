@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GIBS - Home</title>
+  <title>Consultants - GIBS</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <style>
     :root {
       --gold: #FFD700;
-      --gold-hover: #e6c200;
+      --gold-hover: #e6c200; /* Slightly darker shade for hover effects */
       --dark: #333;
       --light: #fff;
     }
@@ -19,32 +19,23 @@
       color: var(--dark);
     }
     .navbar {
-      background-color: #fff !important; /* white background */
-      color: #222 !important;            /* dark text */
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    }
-    .navbar .nav-link,
-    .navbar .navbar-brand {
-      color: #222 !important;
-      font-weight: bold;
-    }
-    .navbar .nav-link.active,
-    .navbar .nav-link:hover {
-      color: #bfa046 !important; /* gold or your highlight color */
+      background-color: #333; /* Dark gray background for the navbar */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 1rem 1.5rem;
     }
     .navbar-brand {
       display: flex;
       align-items: center;
     }
     .navbar-brand img {
-      height: 80px;
-      margin-right: 15px;
+      height: 80px; /* Adjust logo size */
+      margin-right: 15px; /* Add spacing between the logo and text */
     }
     .navbar-brand div {
       text-align: left;
     }
     .navbar-brand strong {
-      color: #222;
+      color: #fff;
       font-size: 1.8rem;
     }
     .navbar-brand small {
@@ -59,33 +50,7 @@
       color: var(--gold) !important; /* Highlight active link with gold */
     }
     .nav-link:hover {
-      color: var(--gold-hover) !important; /* Gold hover effect */
-    }
-    .hero {
-      height: 100vh; /* Full-screen height */
-      position: relative;
-    }
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: var(--light);
-    }
-    .hero p {
-      background-color: var(--gold);
-      color: var (--dark);
-      font-weight: bold;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    .hero .btn:hover {
-      background-color: var(--gold-hover);
-      color: var(--light);
+      color: var(--gold-hover) !important; /* Slightly darker gold on hover */
     }
     .section-title {
       color: var(--gold);
@@ -93,78 +58,97 @@
       font-weight: bold;
       text-align: center;
       margin-bottom: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     .card {
       border: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+      position: relative;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .card img {
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover img {
+      transform: scale(1.1);
+    }
+    .card-title {
+      color: var(--gold);
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+    .card-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .card:hover .card-overlay {
+      opacity: 1;
     }
     .footer {
       background-color: var(--gold);
       color: var(--dark);
-      padding: 20px 0;
+      padding: 1rem;
       text-align: center;
     }
-    .carousel-item img {
-      height: 70vh; /* Set the height to 70% of the viewport height */
-      object-fit: cover; /* Ensure the image covers the area without distortion */
+    a {
+      color: var(--gold);
+      text-decoration: none;
     }
-    /* Custom background colour for "Empower Your Future" slide */
-    .empower-slide {
-      background-color: yellow; /* Yellow background */
-    }
-    /* Custom font colour for "Empower Your Future" text */
-    .empower-text {
-      color: yellow; /* Yellow text color */
-      font-weight: bold; /* Make the text bold */
-      text-align: center; /* Center-align the text */
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for elevation */
-    }
-    .bordered-text {
-      color: yellow; /* Yellow text color */
-      font-weight: bold; /* Make the text bold */
-      text-align: center; /* Center-align the text */
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for elevation */
-    }
-    .learn-text {
-      color: yellow; /* Yellow text color */
-      font-weight: bold; /* Make the text bold */
-      text-align: center; /* Center-align the text */
-      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for elevation */
+    a:hover {
+      color: var(--gold-hover);
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-  <div class="container">
-    <a class="navbar-brand d-flex align-items-center" href="index.html">
-      <img src="images/logo.png" alt="GIBS Logo">
-      <div>
-        <strong style="font-size: 1.8rem;">GIBS</strong><br>
-        <small style="font-size: 1rem;">Ghana International Business School</small>
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="GIBS Logo">
+        <div>
+          <strong style="font-size: 1.8rem;">GIBS</strong><br>
+          <small style="font-size: 1rem;">Ghana International Business School</small>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programmes</a></li>
+          <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
+          <li class="nav-item"><a class="nav-link" href="consultants.html">Consultants</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> <!-- New Gallery Menu -->
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
       </div>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="programs.html">Programmes</a></li>
-        <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
-        <li class="nav-item"><a class="nav-link" href="consultants.html">Consultants</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
     </div>
-  </div>
-</nav>
+  </nav>
 
   <!-- Hero Section with Slideshow -->
   <section id="home" class="hero">
