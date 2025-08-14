@@ -1,4 +1,4 @@
- <!-- about.html -->
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,10 +21,19 @@
       color: var(--dark);
       font-family: 'Segoe UI', sans-serif;
     }
+    /* Apply to all pages */
     .navbar {
-      background-color: var(--dark); /* Dark gray background for the navbar */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.07);
-      padding: 1rem 1.5rem;
+      background-color: #fff !important; /* white background */
+      color: #222 !important;            /* dark text */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: #222 !important;
+    }
+    .navbar .nav-link.active,
+    .navbar .nav-link:hover {
+      color: #bfa046 !important; /* gold or your highlight color */
     }
     .navbar-brand {
       display: flex;
@@ -211,7 +220,7 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="images/logo.png" alt="GIBS Logo">
@@ -225,12 +234,12 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="programs.html">Programmes</a></li>
           <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
           <li class="nav-item"><a class="nav-link" href="consultants.html">Consultants</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> <!-- New Gallery Menu -->
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>

@@ -20,39 +20,19 @@
       background-color: var(--light);
       color: var(--dark);
     }
+    /* Apply to all pages */
     .navbar {
-      background-color: #333; /* Dark gray background for the navbar */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 1rem 1.5rem;
+      background-color: #fff !important; /* white background */
+      color: #222 !important;            /* dark text */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-    .navbar-brand {
-      display: flex;
-      align-items: center;
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+      color: #222 !important;
     }
-    .navbar-brand img {
-      height: 80px; /* Adjust logo size */
-      margin-right: 15px;
-    }
-    .navbar-brand div {
-      text-align: left;
-    }
-    .navbar-brand strong {
-      color: #fff;
-      font-size: 1.8rem;
-    }
-    .navbar-brand small {
-      color: #FFD700;
-      font-size: 1rem;
-    }
-    .nav-link, .navbar-brand {
-      color: #fff !important; /* White text for contrast */
-      font-weight: bold;
-    }
-    .nav-link.active {
-      color: var(--gold) !important; /* Highlight active link with gold */
-    }
-    .nav-link:hover {
-      color: var(--gold-hover) !important; /* Slightly darker gold on hover */
+    .navbar .nav-link.active,
+    .navbar .nav-link:hover {
+      color: #bfa046 !important; /* gold or your highlight color */
     }
     .section {
       padding: 60px 0;
