@@ -2,127 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GIBS - Home</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About GIBS</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  
+  <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
   <style>
     :root {
       --gold: #FFD700;
-      --gold-hover: #e6c200; /* Slightly darker shade for hover effects */
-      --dark: #333;
+      --gold-hover: #e6c200;
+      --dark: #222;
       --light: #fff;
     }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
       background-color: var(--light);
-      color: var (--dark);
+      color: var(--dark);
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.7;
     }
+
+    /* Navbar */
     .navbar {
-      background-color: #333; /* Dark gray */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 1rem 1.5rem; /* Increase padding for better spacing */
-    }
-    .navbar-brand {
-      display: flex;
-      align-items: center;
+      background-color: var(--dark);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
     .navbar-brand img {
-      height: 80px; /* Adjust logo size */
-      margin-right: 15px; /* Add spacing between the logo and text */
-    }
-    .navbar-brand div {
-      text-align: left; /* Align text to the left */
+      height: 70px;
+      margin-right: 10px;
     }
     .navbar-brand strong {
-      color: #fff; /* White text for "GIBS" */
-      font-size: 1.8rem; /* Larger font size for "GIBS" */
+      color: var(--light);
+      font-size: 1.6rem;
     }
     .navbar-brand small {
-      color: #FFD700; /* Gold color for the full name */
-      font-size: 1rem; /* Smaller font size for the full name */
+      color: var(--gold);
+      font-size: 0.95rem;
     }
-    .nav-link, .navbar-brand {
-      color: #fff !important; /* White text for contrast */
-      font-weight: bold;
+    .nav-link {
+      color: var(--light) !important;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
     }
-    .nav-link.active {
-      color: var(--gold) !important; /* Highlight active link with gold */
+    .nav-link:hover, .nav-link.active {
+      color: var(--gold) !important;
     }
-    .nav-link:hover {
-      color: var(--gold-hover) !important; /* Gold hover effect */
+    .navbar-toggler {
+      border: none;
     }
-    .hero {
-      height: 100vh; /* Full-screen height */
-      position: relative;
+    .navbar-toggler-icon {
+      background-image: none;
     }
-    .hero-overlay {
-      background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-      padding: 20px;
-      border-radius: 10px;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      margin-bottom: 20px;
+    .navbar-toggler-icon::before {
+      content: "\2630";
+      font-size: 1.5rem;
       color: var(--light);
     }
-    .hero p {
-      background-color: var(--gold);
-      color: var (--dark);
-      font-weight: bold;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    .hero .btn:hover {
-      background-color: var(--gold-hover);
-      color: var(--light);
+
+    /* Section Styling */
+    .section {
+      padding: 70px 0;
     }
     .section-title {
       color: var(--gold);
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       font-weight: bold;
+      margin-bottom: 1.8rem;
       text-align: center;
-      margin-bottom: 2rem;
+      position: relative;
     }
-    .card {
-      border: none;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+    .section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--gold);
+      margin: 10px auto 0;
     }
-    .card:hover {
+
+    ul li strong {
+      color: var(--gold);
+    }
+
+    /* Mission & Vision Cards */
+    .info-card {
+      background: var(--light);
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .info-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
+    .info-card i {
+      font-size: 3rem;
+      color: var(--gold);
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
     .footer {
-      background-color: var(--gold);
-      color: var(--dark);
-      padding: 20px 0;
+      background-color: var(--dark);
+      color: var(--light);
+      padding: 25px 0;
       text-align: center;
     }
-    .carousel-item img {
-      height: 70vh; /* Set the height to 70% of the viewport height */
-      object-fit: cover; /* Ensure the image covers the area without distortion */
+    .footer a {
+      color: var(--gold);
+      text-decoration: none;
     }
-    /* Custom background colour for "Empower Your Future" slide */
-    .empower-slide {
-      background-color: yellow; /* Yellow background */
-    }
-    /* Custom font colour for "Empower Your Future" text */
-    .empower-text {
-      color: yellow !important; /* Force yellow font colour */
+    .footer a:hover {
+      color: var(--gold-hover);
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="images/logo.png" alt="GIBS Logo">
         <div>
-          <strong style="font-size: 1.8rem;">GIBS</strong><br>
-          <small style="font-size: 1rem;">Ghana International Business School</small>
+          <strong>GIBS</strong><br>
+          <small>Ghana International Business School</small>
         </div>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -135,342 +147,80 @@
           <li class="nav-item"><a class="nav-link" href="programs.html">Programmes</a></li>
           <li class="nav-item"><a class="nav-link" href="admissions.html">Admissions</a></li>
           <li class="nav-item"><a class="nav-link" href="consultants.html">Consultants</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li> <!-- New Gallery Menu -->
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-
-  <!-- Hero Section with Slideshow -->
-  <section id="home" class="hero">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <img src="images/slide1.jpg" class="d-block w-100" alt="Slide 1">
-          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-            <h1 class="bordered-text">Welcome to GIBS</h1>
-            <p>Your Gateway to World-Class Business Education and Professional Growth.</p>
-             <a href="programs.html" class="btn btn-lg btn-dark">Explore Courses</a>
-          </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="carousel-item empower-slide">
-          <img src="images/slide2.jpg" class="d-block w-100" alt="Slide 2">
-          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-            <h1 class="empower-text">Empower Your Future</h1>
-            <p>Join our programs and take the first step toward success.</p>
-            <a href="admissions.html" class="btn btn-lg btn-dark">Apply Now</a>
-          </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <img src="images/slide3.jpg" class="d-block w-100" alt="Slide 3">
-          <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-            <h1 class="learn-text">Learn from the Best</h1>
-            <p>Our experienced consultants and faculty are here to guide you.</p>
-            <a href="consultants.html" class="btn btn-lg btn-dark">Meet Our Team</a>
-          </div>
-        </div>
-      </div>
-      <!-- Carousel Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </section>
-
   <!-- About Section -->
-  <section id="about" class="py-5" data-aos="fade-up">
-    <div class="container text-center">
-      <h2 class="section-title">About GIBS</h2>
-      <p>Ghana International Business School (GIBS) is a leading provider of executive education and consulting services, equipping African enterprises especially MSMEs with innovative strategies to thrive in the evolving AfCFTA-driven business landscape.
-</p>
+  <section class="section" data-aos="fade-up">
+    <div class="container">
+      <div class="mx-auto" style="max-width: 900px;">
+        <h2 class="section-title">About Us</h2>
+        <p>Ghana International Business School (GIBS) is a registered knowledge broker; innovation, management training and consulting services provider for Private, Public and Civil Society Organisations (CSOs).</p>
+        <p>Established in the year 2006, GIBS has distinguished itself as provider of high impact strategic executive education programmes with deep African insights, curated to prepare participants and client organisations for global business success.</p>
+        <p>The advent of the African Continental Free Trade Area (AfCFTA), with many emerging economies and businesses in Africa, which requires deliberate efforts to develop the capacities of owner-managers and key executives of Micro, Small and Medium-sized Enterprises (MSMEs) in particular, to navigate the demands of the complex business environment and nothing should be left to chance. GIBS stands in the best place to meet this critical need. Following decades of experience working with African enterprises in leadership management and administration; we have developed the capacity to assess client needs and co-create the most innovative and rewarding solutions for client; and or client consultant co-execution.</p>
+        
+        <h2 class="section-title">Goal and Objectives</h2>
+        <p>Our goal is to adequately equip owner/managers and executives of African enterprises to become highly competent in a wide range of global business subject areas and themes to enable them to, effectively and efficiently access intra-African trade opportunities dominant players as well as operate competitively in the international business arena.</p>
+        
+        <h2 class="section-title">Objectives</h2>
+        <p>Standing on our philosophy that good corporate governance, exemplified in leadership and innovation that permeates management and administrative practices are key success factors for contemporary international business, our objectives are:</p>
+        <ul>
+          <li>To equip leaders and managers of African enterprises with the relevant know-how to dominate intra-African trade and tap into its endless opportunities to become giants of enterprise.</li>
+          <li>To provide the vehicle (Think Tank) for the intellectual calibration of strategic business subjects and themes that generate synergy to propel African enterprises to make global business impact.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- Mission & Vision Section -->
-  <section class="bg-light py-5" data-aos="fade-up">
+  <!-- Mission & Vision -->
+  <section class="section bg-light" data-aos="fade-up">
     <div class="container text-center">
       <h2 class="section-title">Mission & Vision</h2>
-      <p><strong>Mission:</strong> Continuously provide innovative practice based, world-class knowledge, skills and appropriate attitudes for leaders of Africa’s enterprises towards international business success. </p>
-      <p><strong>Vision:</strong> Become Africa’s leading Centre of Excellence in Leadership, Corporate Governance; Innovation, Information Technology, Management and Administration.</p>
-    </div>
-  </section>
-
-  <!-- Programs Section -->
-  <section id="programmes" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Our Programmes</h2>
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <!-- LCGP -->
-        <div class="col">
-          <div class="card h-100" data-aos="fade-up">
-            <img src="images/lcgp.jpg" class="card-img-top" alt="Leadership & Corporate Governance Programme">
-            <div class="card-body">
-              <h5 class="card-title">Leadership & Corporate Governance Programme (LCGP)</h5>
-              <p><strong>Dates:</strong> June 25–27, 2025 &nbsp;|&nbsp; <strong>Fee:</strong> GHC 2,900</p>
-              <p>Explore corporate governance fundamentals, board roles, and leadership strategies.</p>
-              <a href="programs.html" class="btn btn-outline-dark">Learn More</a>
-            </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-5" data-aos="fade-right">
+          <div class="info-card">
+            <i class="bi bi-bullseye"></i>
+            <h5 class="text-warning mb-2">Mission</h5>
+            <p>Continuously provide innovative practice based, world-class knowledge, skills and appropriate attitudes for leaders of Africa’s enterprises towards international business success.</p>
           </div>
         </div>
-        <!-- SMP -->
-        <div class="col">
-          <div class="card h-100" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/smp.jpg" class="card-img-top" alt="Strategic Management Programme">
-            <div class="card-body">
-              <h5 class="card-title">Strategic Management Programme (SMP)</h5>
-              <p><strong>Dates:</strong> Sept 29–30, 2025 &nbsp;|&nbsp; <strong>Fee:</strong> GHC 1,900</p>
-              <p>Learn strategic planning, stakeholder engagement, and crisis management.</p>
-              <a href="programs.html" class="btn btn-outline-dark">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <!-- MPMP -->
-        <div class="col">
-          <div class="card h-100" data-aos="fade-up" data-aos-delay="200">
-            <img src="images/mpmp.jpg" class="card-img-top" alt="Marketing & Public Relations Management Programme">
-            <div class="card-body">
-              <h5 class="card-title">Marketing & Public Relations Management Programme (MPMP)</h5>
-              <p><strong>Dates:</strong> Oct 15–17, 2025 &nbsp;|&nbsp; <strong>Fee:</strong> GHC 2,900</p>
-              <p>Master marketing strategies, branding, and campaign ROI techniques.</p>
-              <a href="programs.html" class="btn btn-outline-dark">Learn More</a>
-            </div>
-          </div>
-        </div>
-        <!-- SPAP -->
-        <div class="col">
-          <div class="card h-100" data-aos="fade-up" data-aos-delay="300">
-            <img src="images/spap.jpg" class="card-img-top" alt="Secretaries & Personal Assistants Programme">
-            <div class="card-body">
-              <h5 class="card-title">Secretaries & Personal Assistants Programme (SPAP)</h5>
-              <p><strong>Dates:</strong> Oct 22–24, 2025 &nbsp;|&nbsp; <strong>Fee:</strong> GHC 2,900</p>
-              <p>Enhance time management, event planning, and communication skills.</p>
-              <a href="programs.html" class="btn btn-outline-dark">Learn More</a>
-            </div>
+        <div class="col-md-5" data-aos="fade-left">
+          <div class="info-card">
+            <i class="bi bi-eye"></i>
+            <h5 class="text-warning mb-2">Vision</h5>
+            <p>Become Africa’s leading Centre of Excellence in Leadership, Corporate Governance; Innovation, Information Technology, Management and Administration.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- News Section -->
-  <section id="news" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="section-title" data-aos="fade-up">Latest News & Updates</h2>
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-        <!-- News Item 1 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0" data-aos="fade-up">
-            <img src="images/rn.jpg" class="card-img-top" alt="News 1">
-            <div class="card-body">
-              <h5 class="card-title">REGISTER NOW!!!</h5>
-              <p class="card-text">GIBS has introduced new programmes to empower professionals with cutting-edge skills.</p>
-            </div>
-          </div>
-        </div>
-        <!-- News Item 2 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/cg.jpg" class="card-img-top" alt="News 2">
-            <div class="card-body">
-              <h5 class="card-title">Upcoming Programmes</h5>
-              <p class="card-text">Join our Leadership and Corporate Governace programme that is coming up register now.</p>
-            </div>
-          </div>
-        </div>
-        <!-- News Item 3 -->
-        <div class="col">
-          <div class="card h-100 shadow-sm border-0" data-aos="fade-up" data-aos-delay="200">
-            <img src="images/sm.jpg" class="card-img-top" alt="News 3">
-            <div class="card-body">
-              <h5 class="card-title">GIBS Partners with Industry Leaders</h5>
-              <p class="card-text">We are excited to announce our partnership with leading organizations to provide practical education.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Counters Section -->
-  <section class="py-5" data-aos="zoom-in">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-md-4"><div class="counter-box"><h2>1000+</h2><p>Graduates</p></div></div>
-        <div class="col-md-4"><div class="counter-box"><h2>10+</h2><p>Programmes</p></div></div>
-        <div class="col-md-4"><div class="counter-box"><h2>15+</h2><p>Consultants</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Admissions Section -->
-  <section id="admissions" class="py-5">
+  <!-- Partnerships -->
+  <section class="section" data-aos="zoom-in">
     <div class="container text-center">
-      <h2 class="section-title">Admissions</h2>
-      <p>Join GIBS today and take the first step toward a brighter future. Our admissions process is simple and designed to help you get started quickly.</p>
-      <a href="admissions.html" class="btn btn-dark btn-lg">Apply Now</a>
-    </div>
-  </section>
-
-  <!-- Consultants Section -->
-  <section id="consultants" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="section-title">Our Consultants</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <!-- Consultant 1 -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="images/william.jpg" class="card-img-top" alt="William Kofi Dowokpor">
-            <div class="card-body">
-              <h5 class="card-title">William Kofi Dowokpor</h5>
-              <p class="card-text">Managing Consultant & LCGP Coordinator with 20+ years in corporate governance, leadership, and international trade across Africa, Europe & USA.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Consultant 2 -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="images/Richmond.jpg" class="card-img-top" alt="Richmond Lamptey">
-            <div class="card-body">
-              <h5 class="card-title">Richmond Lankwei Lamptey</h5>
-              <p class="card-text">Senior Management & Communications Consultant, MPMP Coordinator with 20+ years in media, marketing, and strategic communications in West Africa.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Consultant 3 -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="images/Dr. Samuel Addo.jpg" class="card-img-top" alt="Dr. Samuel Addo">
-            <div class="card-body">
-              <h5 class="card-title">Dr. Samuel Addo</h5>
-              <p class="card-text">Economist & Strategic Management lead. Adjunct lecturer at UG Business School and GIMPA; 10+ yrs in banking strategy and macro-finance research.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Consultant 4 -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="images/berlinda.jpg" class="card-img-top" alt="Berlinda Bulley">
-            <div class="card-body">
-              <h5 class="card-title">Berlinda Bulley</h5>
-              <p class="card-text">Management Consultant & SPAP Coordinator with 20+ yrs in HR, M&E, regulatory compliance, and diversity initiatives in cross-border contexts.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Consultant 5 -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="images/EbenAnuwa-Amarh_new.jpg" class="card-img-top" alt="Eben Anuwa-Amarh">
-            <div class="card-body">
-              <h5 class="card-title">Eben Anuwa-Amarh</h5>
-              <p class="card-text">Entrepreneurship lead at GIBS. Former NDPC Commissioner and AEDC Member with expertise in entrepreneurship, HR consulting, and SME research.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Consultant 6: Jones Adjeoda -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="images/jones.jpg" class="card-img-top" alt="Jones Adjeoda">
-            <div class="card-body">
-              <h5 class="card-title">Jones Adjeoda</h5>
-              <p class="card-text">Senior Management Consultant, Finance and Accounting lead with 20+ years of experience in finance, audit, banking, and project management. Passionate about supporting MSMEs.</p>
-            </div>
-          </div>
-        </div>
-        <!-- Consultant 7: Robert Jerry Kwame Agbevem -->
-        <div class="col">
-          <div class="card h-100">
-            <img src="images/robert_agbevem.jpg" class="card-img-top" alt="Robert Jerry Kwame Agbevem">
-            <div class="card-body">
-              <h5 class="card-title">Robert Jerry Kwame Agbevem</h5>
-              <p class="card-text">
-                Astute business executive with nearly two decades of exemplary leadership in internal audit, accounting, project management, operations, and executive management. Robert is a passionate corporate governance enthusiast and a Chartered Accountant (ICA-GH), with experience across multiple industries including fashion, transport, construction, education, and NGOs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2 class="section-title">Get in Touch</h2>
-      <div class="row">
-        <!-- Contact Form -->
-        <div class="col-md-6 mb-4">
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Full Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Your Name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email Address</label>
-              <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
-            </div>
-            <div class="mb-3">
-              <label for="subject" class="form-label">Subject</label>
-              <input type="text" id="subject" class="form-control" placeholder="Subject" required>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" class="form-control" rows="5" placeholder="Your message..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
-        <!-- Contact Info & Map -->
-        <div class="col-md-6">
-          <h5>Contact Information</h5>
-          <p><strong>Address:</strong><br>
-            No. 304/14 Odotei Tsui Close,<br>
-            Dzorwulu–Accra, Ghana</p>
-          <p><strong>Phone:</strong><br>+233 243 588 422</p>
-          <p><strong>Email:</strong><br><a href="mailto:gibsaccra@gmail.com">gibsaccra@gmail.com</a></p>
-          <h5 class="mt-4">Our Location</h5>
-          <!-- Google Maps embed -->
-          <div class="ratio ratio-16x9">
-            <iframe 
-              src="https://www.google.com/maps?q=304%2F14%20Odotei%20Tsui%20Close%2C%20Dzorwulu%20Accra%2C%20Ghana&output=embed" 
-              style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Call to Action Section -->
-  <section class="cta py-5 text-center bg-light" data-aos="fade-up">
-    <div class="container">
-      <h2 class="mb-3">Join GIBS Today</h2>
-      <p class="mb-4">Empower your future with professional and practical education.</p>
-      <a href="programs.html" class="btn btn-dark btn-lg">View Programmes</a>
+      <h2 class="section-title">Partnerships</h2>
+      <i class="bi bi-award display-4 text-warning mb-3"></i>
+      <p>GIBS in partnership with the London Business Training & Consulting (LBTC), offers 15 regular programmes contemporaneously in the two great capital cities of London and Accra. The partnership dubbed “One Content Dual Locations” offers our participants the options to be trained in Accra or London.</p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer bg-dark text-light py-4">
+  <footer class="footer">
     <div class="container text-center">
       <p>&copy; 2025 Ghana International Business School (GIBS). All Rights Reserved.</p>
       <p>
-        <a href="contact.html" class="text-decoration-none text-light">Contact Us</a> |
-        <a href="privacy.html" class="text-decoration-none text-light">Privacy Policy</a> |
-        <a href="terms.html" class="text-decoration-none text-light">Terms of Service</a>
+        <a href="contact.html">Contact Us</a> | 
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="terms.html">Terms of Service</a>
       </p>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
