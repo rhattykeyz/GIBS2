@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About GIBS</title>
+  <title>Home</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
@@ -151,7 +151,13 @@
 
   <!-- Hero Section with Slideshow -->
   <section id="home" class="hero">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
+      <!-- Carousel Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
       <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
@@ -482,5 +488,31 @@
   <script>
     AOS.init();
   </script>
+  <script>
+  // Swipe support for Bootstrap carousel
+  const carousel = document.querySelector('#heroCarousel');
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  if (carousel) {
+    carousel.addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (touchEndX < touchStartX - 50) {
+        bootstrap.Carousel.getInstance(carousel).next();
+      }
+      if (touchEndX > touchStartX + 50) {
+        bootstrap.Carousel.getInstance(carousel).prev();
+      }
+    }
+  }
+</script>
 </body>
 </html>
